@@ -69,7 +69,7 @@ class PemesananAdminController extends Controller
         $data = Pemesanan::findOrFail($id_pemesanan);
         return view('halaman_admin/pemesanan/edit',compact('data'));
     }
-
+//download
     public function download($desain) 
     {
         $file_path = public_path('uploads/file/desain/'.$desain);

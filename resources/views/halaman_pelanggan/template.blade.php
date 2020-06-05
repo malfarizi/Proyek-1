@@ -104,7 +104,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<ul class="nav navbar-nav ">
 							<li class=" active"><a href="{{ url('/index') }}" class="hyper "><span>Home</span></a></li>	
 							<li><a href="{{ url('/index') }}" class="hyper"> <span>Produk</span></a></li>
-							<li><a href="{{ url('/tracking') }}" class="hyper"> <span>Tracking</span></a></li>
+							
 							<!--<li><a href="codes.html" class="hyper"> <span>Konfirmasi Pembayaran</span></a></li>	-->
 						</ul>
 					</div>

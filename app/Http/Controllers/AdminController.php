@@ -56,14 +56,33 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-       Admin::create([
 
-     'username' => $request->input('username'),
-     'password' => bcrypt($request->input('password')),
-     'nama_admin' => $request->input('nama_admin'),
-     'alamat' => $request->input('alamat'),
-     'no_hp' => $request->input('no_hp')]);
-    return redirect()->to('halaman_admin/admin');
+
+        $this->validate($request, [
+            'username'  => 'required|string|min:4|max:15',
+                'password'  => 'required|min:4|max:100',
+                'nama_admin'       => 'required|string',
+                'alamat'           => 'required|string|max:100',
+                'no_hp'   => 'required|string|max:255',
+            
+        ],
+         [
+                'required'      => 'Data tidak boleh kosong',
+                'numeric'       => 'Data harus diisi dengan angka',
+                'string'        => 'Data harus diisi dengan huruf'
+               
+        ]
+    );
+    $data = new \App\Admin();
+    $data->username = $request->input('username');
+    $data->password = $request->input('password');
+    $data->nama_admin = $request->input('nama_admin');
+    $data->alamat = $request->input('alamat');
+    $data->no_hp = $request->input('no_hp');
+     $data->save();
+
+
+        return redirect('halaman_admin/admin')->with('status','Data Berhasil Ditambahkan');
     }
     
 
@@ -84,7 +103,7 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_admin)
     {
         $data = Admin::findOrFail($id_admin);
         return view('halaman_admin/edit',compact('data'));
@@ -99,6 +118,25 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id_admin)
     {
+
+
+     $this->validate($request, [
+            'username'  => 'required|string|min:4|max:15',
+                'password'  => 'required|min:4|max:100',
+                'nama_admin'       => 'required|string',
+                'alamat'           => 'required|string|max:100',
+                'no_hp'   => 'required|string|max:255',
+            
+        ],
+       [
+                'required'      => 'Data tidak boleh kosong',
+                'numeric'       => 'Data harus diisi dengan angka',
+                'string'        => 'Data harus diisi dengan huruf'
+        ]
+    );
+
+
+
         $data = Admin::findOrFail($id_admin);
         $data->username = $request->input('username');
         $data->password = $request->input('password');

@@ -22,6 +22,7 @@ Route::get('/halaman_admin/pemesanan/tambah', 'PemesananAdminController@create')
 Route::post('/halaman_admin/pemesanan/tambah/proses','PemesananAdminController@store');
 Route::get('/halaman_admin/pemesanan/edit/{id}','PemesananAdminController@edit');
 Route::put('/halaman_admin/pemesanan/edit/proses/{id}','PemesananAdminController@update');
+Route::get('/halaman_admin/pemesanan/download/{file}', 'PemesananAdminController@download');
 Route::delete('/halaman_admin/pemesanan/hapus/{id}','PemesananAdminController@destroy');
 ///====================PEMESANAN===================
 Route::get('/pemesanan/pemesanan', 'PemesananController@index');
@@ -43,6 +44,7 @@ Route::get('/index', 'IndexController@index')->name('index');
 Route::get('/tracking', 'IndexController@tracking')->name('halaman_admin/tracking');
 
 ///======================LOGIN ADMIN=======================
+Route::get('/halaman_admin/dashboard', 'LoginController@index');
 Route::get('/loginadmin', 'LoginController@loginadmin');
 Route::post('/loginadminPost', 'LoginController@loginadminPost');
 Route::get('/registeradmin', 'LoginController@registeradmin');

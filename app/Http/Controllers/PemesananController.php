@@ -27,7 +27,7 @@ $datas = DB::table('pemesanan')
     public function create()
     {
         $datas = Pelanggan::select('id_pelanggan','nama_pelanggan')->where('id_pelanggan', session('id_pelanggan'))->get();
-        $prodak = Produk::select('id_produk','nama_produk','harga','ukuran')->where('id_produk', 1)->get();
+        $prodak = Produk::select('id_produk','nama_produk','harga','ukuran')->where('id_produk', 3)->get();
         return view('/pemesanan/tambah',compact('datas', 'prodak'));
 
        

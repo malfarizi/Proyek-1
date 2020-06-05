@@ -57,6 +57,7 @@
                                            
                                  <a href="{{url('halaman_admin/pemesanan/edit', $data->id_pemesanan) }}"  class='btn btn-secondary btn-rounded'><i class='fa fa-pen'></i></a> 
                                        
+                                       <a href="{{url('halaman_admin/pemesanan/download/'. $data->desain) }}"  class='btn btn-secondary btn-rounded'><i class='fa fa-download'></i></a> 
 
 
                                         <form action="{{ url('halaman_admin/pemesanan/hapus', $data->id_pemesanan)}}" method="post">

@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ 
 use Illuminate\Http\Request;
 use App\Admin;
 use App\Pelanggan;
+use APP\Pemesanan;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
@@ -15,7 +16,11 @@ class LoginController extends Controller
         if(!Session::get('loginadmin')){
             return redirect('loginadmin')->with('Alert','You must Login');
         } else {
-            return view('halaman_admin/dashboard');
+             $count = Admin::count();
+        $prodak = Produk::count();
+        $plg = Pelanggan::count();
+        $pms = Pemesanan::count();
+        return view('halaman_admin/dashboard', compact('count', 'prodak', 'plg','pms', $count, $prodak, $plg, $pms) );
         }
         
     }
@@ -43,7 +48,7 @@ class LoginController extends Controller
                 return redirect('/halaman_admin/dashboard');
             }
             else {
-                return redirect('loginadmin')->with('alert', 'login yang bener woy !');
+                return redirect('loginadmin')->with('alert', 'login ');
             }
         } else {
             return redirect('loginadmin')->with('alert', 'Your Password Incorrect !');

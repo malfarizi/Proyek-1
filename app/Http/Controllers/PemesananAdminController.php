@@ -70,6 +70,11 @@ class PemesananAdminController extends Controller
         return view('halaman_admin/pemesanan/edit',compact('data'));
     }
 
+    public function download($desain) 
+    {
+        $file_path = public_path('uploads/file/desain/'.$desain);
+        return response()->download($file_path);
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -90,11 +95,11 @@ class PemesananAdminController extends Controller
             $data->desain = $data->desain;
         }
         else{
-            unlink('uploads/file/'.$data->desain); //menghapus file lama
+            unlink('uploads/file/desain/'.$data->desain); //menghapus file lama
             $desain = $request->file('desain');
             $ext = $desain->getClientOriginalExtension();
             $newName = rand(100000,1001238912).".".$ext;
-            $desain->move('uploads/file',$newName);
+            $desain->move('uploads/file/desain',$newName);
             $data->desain = $newName;
         }
         $data->save();

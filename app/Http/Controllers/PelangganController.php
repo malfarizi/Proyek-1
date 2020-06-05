@@ -49,13 +49,30 @@ public function pelanggan(Request $request){
      */
     public function store(Request $request)
     {
-       Pelanggan::create([
 
-    'username' => $request->input('username'),
-    'password' => bcrypt($request->input('password')),
-    'nama_pelanggan' => $request->input('nama_pelanggan'),
-    'alamat' => $request->input('alamat'),
-    'no_hp' => $request->input('no_hp')]);
+
+                $this->validate($request, [
+            'username'  => 'required|string|min:4|max:15',
+                'password'  => 'required|min:4|max:100',
+                'nama_pelanggan'       => 'required|string',
+                'alamat'           => 'required|string|max:100',
+                'no_hp'   => 'required|string|max:255',
+            
+        ],
+         [
+                'required'      => 'Data tidak boleh kosong',
+                'numeric'       => 'Data harus diisi dengan angka',
+                'string'        => 'Data harus diisi dengan huruf'
+               
+        ]
+    );
+    $data = new \App\Pelanggan();
+    $data->username = $request->input('username');
+    $data->password = $request->input('password');
+    $data->nama_pelanggan = $request->input('nama_pelanggan');
+    $data->alamat = $request->input('alamat');
+    $data->no_hp = $request->input('no_hp');
+     $data->save();
     return redirect()->to('halaman_pelanggan/pelanggan')->with('status','Data Berhasil Ditambahkan');
     }
     
@@ -92,6 +109,23 @@ public function pelanggan(Request $request){
      */
     public function update(Request $request, $id_pelanggan)
     {
+             $this->validate($request, [
+                'username'  => 'required|string|min:4|max:15',
+                'password'  => 'required|min:4|max:100',
+                'nama_pelanggan'       => 'required|string',
+                'alamat'           => 'required|string|max:100',
+                'no_hp'   => 'required|string|max:255',
+            
+        ],
+         [
+                'required'      => 'Data tidak boleh kosong',
+                'numeric'       => 'Data harus diisi dengan angka',
+                'string'        => 'Data harus diisi dengan huruf'
+               
+        ]
+    );
+
+
         $data = Pelanggan::findOrFail($id_pelanggan);
         $data->username = $request->input('username');
         $data->password = bcrypt($request->password);

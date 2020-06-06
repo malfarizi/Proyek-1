@@ -25,7 +25,7 @@
                 <h3>Pemesanan</h3>
             </div>
             <div class="card-body">
-            <form method="POST" action="{{url('/pemesanan/tambah/proses') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{url('/pemesanan/tambah2/proses') }}" enctype="multipart/form-data">
               @csrf
 
                 <div class="form-group row">

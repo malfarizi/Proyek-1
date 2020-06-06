@@ -37,6 +37,10 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
+            'nama_produk' => 'required',
+            'deskripsi_produk' => 'required',
+            'ukuran' => 'required',
+            'harga' => 'required',
             'foto_produk' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
             
         ]);

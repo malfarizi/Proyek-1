@@ -83,7 +83,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="head-t">
 				<ul class="card">
 					<li><a href="{{ url('pemesanan/tambah') }}" ><i class="fa fa-heart" aria-hidden="true"></i>Stiker</a></li>
-					<li><a href="login.html" ><i class="fa fa-user" aria-hidden="true"></i>X Banner</a></li>
+					<li><a href="{{ url('pemesanan/tambah2') }}" ><i class="fa fa-user" aria-hidden="true"></i>X Banner</a></li>
 					
 				</ul>	
 			</div>

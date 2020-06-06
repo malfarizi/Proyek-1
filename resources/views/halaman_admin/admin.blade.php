@@ -13,6 +13,12 @@
                        
                         <a href="{{url('halaman_admin/tambah')}}" class="btn btn-success" align="right"><i class="fa fa-plus"></i> Tambah Data</a>  
                     </div>
+
+                        @if(session('status'))
+                      <div class="alert alert-success">
+                          {{session('status')}}
+                      </div>
+                    @endif
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

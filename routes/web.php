@@ -30,6 +30,12 @@ Route::get('/pemesanan/tambah', 'PemesananController@create');
 Route::post('/pemesanan/tambah/proses','PemesananController@store');
 Route::get('/pemesanan/edit/{id}','PemesananController@edit');
 Route::put('/pemesanan/edit/proses/{id}','PemesananController@update');
+
+
+Route::get('/pemesanan/tambah2', 'PemesananController@create2');
+Route::post('/pemesanan/tambah2/proses','PemesananController@store2');
+Route::get('/pemesanan/edit2/{id}','PemesananController@edit2');
+Route::put('/pemesanan/edit2/proses/{id}','PemesananController@update2');
 //==================TRANSFER ADMIN==================
 Route::get('/halaman_admin/transfer/transfer', 'TransferAdminController@index');
 Route::delete('/halaman_admin/transfer/hapus/{id}','TransferAdminController@destroy');

@@ -75,7 +75,7 @@ class AdminController extends Controller
     );
     $data = new \App\Admin();
     $data->username = $request->input('username');
-    $data->password = $request->input('password');
+    $data->password = bcrypt($request->password);
     $data->nama_admin = $request->input('nama_admin');
     $data->alamat = $request->input('alamat');
     $data->no_hp = $request->input('no_hp');
@@ -139,7 +139,7 @@ class AdminController extends Controller
 
         $data = Admin::findOrFail($id_admin);
         $data->username = $request->input('username');
-        $data->password = $request->input('password');
+        $data->password = bcrypt($request->password);
         $data->nama_admin = $request->input('nama_admin');
         $data->alamat = $request->input('alamat');
         $data->no_hp = $request->input('no_hp');

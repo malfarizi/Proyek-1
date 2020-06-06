@@ -55,14 +55,30 @@
 
 <!-- Divider -->
       <hr class="sidebar-divider my-0">
+<li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Admin</span>
+        </a>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Admin:</h6>
+            <a class="collapse-item" href="{{url('halaman_admin/admin')}}">Akun Admin</a>
+            <a class="collapse-item" href="{{url('halaman_admin/listadmin')}}">List Admin</a>
 
-      <!-- Nav Item - Dashboard -->
+          </div>
+        </div>
+      </li>
+
+
+
+      <!-- Nav Item - Dashboard --
       <li class="nav-item">
         <a class="nav-link" href="{{url('halaman_admin/admin')}}">
           <i class="fas fa-fw fa-list"></i>
           <span>Akun Admin </span></a>
       </li>
-<!-- Divider -->
+Divider -->
  <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->

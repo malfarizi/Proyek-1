@@ -28,7 +28,7 @@ class AdminController extends Controller
         return view('halaman_admin/dashboard', compact('count', 'prodak', 'plg','pms', $count, $prodak, $plg, $pms) );
        
     }
-      public function admin(Request $request){
+      public function listadmin(Request $request){
         $datas = Admin::get();
         return view('/halaman_admin/admin',compact('datas'));
     }

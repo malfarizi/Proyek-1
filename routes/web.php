@@ -59,6 +59,7 @@ Route::get('/logoutadmin', 'LoginController@logoutadmin');
 
 
 //------------------------ADMIN----------------------------------
+Route::get('/halaman_admin/listadmin', 'AdminController@listadmin');
 Route::get('/halaman_admin/dashboard', 'AdminController@dashboard')->name('dashboard');
 Route::get('/halaman_admin/admin', 'AdminController@index')->name('halaman_admin/admin');
 Route::get('/halaman_admin/tambah', 'AdminController@create');

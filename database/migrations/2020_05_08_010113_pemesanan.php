@@ -17,7 +17,7 @@ class Pemesanan extends Migration
             $table->increments('id_pemesanan');
           
             $table->integer('jml_pesan');
-            $table->double('total');
+
             $table->integer('id_produk')->unsigned();
             $table->foreign('id_produk')->references('id_produk')->on('produk');  
             $table->integer('id_pelanggan')->unsigned();

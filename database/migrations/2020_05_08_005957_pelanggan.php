@@ -16,7 +16,7 @@ class Pelanggan extends Migration
         Schema::create('pelanggan', function (Blueprint $table) {
             $table->increments('id_pelanggan');
             $table->string('nama_pelanggan');
-            $table->string('username')->unique();
+            $table->string('username');
             $table->timestamp('username_verified_at')->nullable();
             $table->string('password');
             $table->string('alamat');

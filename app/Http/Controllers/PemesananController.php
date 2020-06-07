@@ -13,7 +13,7 @@ class PemesananController extends Controller
 {
      public function index()
     {
-$datas = DB::table('pemesanan')
+            $datas = DB::table('pemesanan')
             ->join('pelanggan', 'pelanggan.id_pelanggan', '=', 'pemesanan.id_pelanggan')
             ->join('produk', 'produk.id_produk', '=', 'pemesanan.id_produk')
             ->select('pemesanan.*', 'pelanggan.*', 'produk.id_produk', 'produk.nama_produk')

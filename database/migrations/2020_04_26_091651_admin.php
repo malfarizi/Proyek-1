@@ -17,11 +17,11 @@ class Admin extends Migration
         
          $table->increments('id_admin');
          $table->string('nama_admin',255);
-         $table->string('username', 255)->unique();
+         $table->string('username', 255);
          $table->string('password', 255);
          $table->string('alamat', 255);
          $table->string('no_hp', 255);
-         $table->string('level', 255);
+
          $table->rememberToken();
          $table->timestamps();
          });

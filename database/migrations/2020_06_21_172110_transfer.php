@@ -4,23 +4,23 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Pemesanan extends Migration
+class Transfer extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up()
+     public function up()
     {
-        Schema::create('pemesanan', function (Blueprint $table) {
-            $table->increments('id_pemesanan');
-          
-            $table->string('foto_ktp');
-            $table->integer('id_produk')->unsigned();
-            $table->foreign('id_produk')->references('id_produk')->on('produk');  
+        Schema::create('transfer', function (Blueprint $table) {
+            $table->increments('id_transfer');
+           
             $table->integer('id_pelanggan')->unsigned();
             $table->foreign('id_pelanggan')->references('id_pelanggan')->on('pelanggan');
+            $table->integer('id_detail_pemesanan')->unsigned();
+            $table->foreign('id_detail_pemesanan')->references('id_detail_pemesanan')->on('detail_pemesanan');
+            $table->string('foto_transfer')->nullable();
             $table->timestamps();
         });   
     }
@@ -32,6 +32,6 @@ class Pemesanan extends Migration
      */
     public function down()
     {
-         Schema::dropIfExists('pemesanan');
+         Schema::dropIfExists('transfer');
     }
 }

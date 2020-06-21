@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UploadBuktiTransfer extends Migration
+class DetailPemesanan extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,22 @@ class UploadBuktiTransfer extends Migration
      */
     public function up()
     {
-    Schema::create('transfer', function (Blueprint $table) {
-            $table->increments('id_transfer');
+        Schema::create('detail_pemesanan', function (Blueprint $table) {
+            $table->increments('id_detail_pemesanan');
+          
+            $table->string('desain');
+            $table->string('status');
+            $table->integer('harga');
+            $table->integer('jml_pesan');
+            $table->integer('total');
             $table->integer('id_pemesanan')->unsigned();
             $table->foreign('id_pemesanan')->references('id_pemesanan')->on('pemesanan');
             $table->integer('id_produk')->unsigned();
             $table->foreign('id_produk')->references('id_produk')->on('produk');  
             $table->integer('id_pelanggan')->unsigned();
             $table->foreign('id_pelanggan')->references('id_pelanggan')->on('pelanggan');
-
             $table->timestamps();
-        });    
+        });   
     }
 
     /**
@@ -33,5 +38,6 @@ class UploadBuktiTransfer extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transfer');    }
+         Schema::dropIfExists('detail_pemesanan');
+    }
 }

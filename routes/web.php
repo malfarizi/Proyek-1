@@ -39,6 +39,19 @@ Route::put('/pemesanan/edit2/proses/{id}','PemesananController@update2');
 //==================TRANSFER ADMIN==================
 Route::get('/halaman_admin/transfer/transfer', 'TransferAdminController@index');
 Route::delete('/halaman_admin/transfer/hapus/{id}','TransferAdminController@destroy');
+//========================Detail Pemesanan=========================
+Route::get('/detail_pemesanan/detail_pemesanan', 'DetailController@index');
+Route::get('/detail_pemesanan/tambah', 'DetailController@create');
+Route::post('/detail_pemesanan/tambah/proses','DetailController@store');
+Route::get('/detail_pemesanan/edit/{id}','DetailController@edit');
+Route::put('/detail_pemesanan/edit/proses/{id}','DetailController@update');
+
+
+Route::get('/halaman_admin/detail_pemesanan', 'DetailController@indexadmin');
+Route::get('/halaman_admin/detail_pemesanan/edit/{id}','DetailController@edit');
+Route::put('/halaman_admin/detail_pemesanan/edit/proses/{id}','DetailController@update');
+Route::get('/halaman_admin/detail_pemesanan/download/{file}', 'DetailController@download');
+Route::delete('/halaman_admin/detail_pemesanan/hapus/{id}','DetailController@destroy');
 
 ///====================Transfer===================
 Route::get('/transfer/transfer', 'TransferController@index');

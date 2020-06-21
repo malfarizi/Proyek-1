@@ -36,11 +36,11 @@
                                 <tr>
                                     <td>{{ $loop->iteration}}</td>
                                     <td>{{ $data->nama_pelanggan }}</td>
-                                  <!--   <td>{{ $data->jml_pesan }}</td> -->
-                                    <td>{{ $data->id_produk }}</td>
-                                  <!--  <td>{{ $data->harga_pcs }}</td> -->
+ 
+                                    <td>ID {{ $data->id_produk }}</td>
+
                                     <td>{{ $data->status }}</td>
-                                     <!-- <td><img src="{{ url('uploads/file/desain/'.$data->desain) }}" style="width: 100px; height: 150px;"> </td> -->
+
                                      <td><img src="{{ url('uploads/file/foto_transfer/'.$data->foto_transfer) }}" style="width: 100px; height: 150px;"> </td>
                                       <td>{{ $data->created_at }}</td>
 

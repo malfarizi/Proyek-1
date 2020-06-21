@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Produk;
 use App\Pelanggan;
-use App\Pemesanan;
+use App\Detail_Pemesanan;
 use App\Transfer;
 use DB;
 class TransferController extends Controller
@@ -18,9 +18,9 @@ class TransferController extends Controller
     public function index()
     {
         $datas = DB::table('transfer')
-            ->join('pemesanan', 'pemesanan.id_pemesanan', '=', 'transfer.id_pemesanan')
+            ->join('detail_pemesanan', 'detail_pemesanan.id_detail_pemesanan', '=', 'transfer.id_detail_pemesanan')
             ->join('pelanggan', 'pelanggan.id_pelanggan', '=', 'transfer.id_pelanggan')
-            ->select('pemesanan.*', 'pelanggan.*', 'transfer.*')
+            ->select('detail_pemesanan.*', 'pelanggan.*', 'transfer.*')
             ->where('pelanggan.id_pelanggan', session('id_pelanggan'))
             ->get();
 
@@ -32,10 +32,11 @@ class TransferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+   public function create()
     {
         $datas = Pelanggan::select('id_pelanggan','nama_pelanggan')->where('id_pelanggan', session('id_pelanggan'))->get();
-        $pms = Pemesanan::select('id_pemesanan','id_produk','id_pelanggan')->where('id_pelanggan', session('id_pelanggan'))->get();
+        $pms = Detail_Pemesanan::select('id_detail_pemesanan','id_pelanggan','total')->where('id_pelanggan', session('id_pelanggan'))->get();
+       
         return view('/transfer/tambah',compact('datas', 'pms'));
     }
 
@@ -53,9 +54,9 @@ class TransferController extends Controller
         ]);    
 
           $data = new \App\Transfer();
-$data->id_pelanggan = $request->input('id_pelanggan');
-$data->id_pemesanan = $request->input('id_pemesanan');
-        
+        $data->id_pelanggan = $request->input('id_pelanggan');
+        $data->id_detail_pemesanan = $request->input('id_detail_pemesanan');
+                
         $foto_transfer = $request->file('foto_transfer');
         $ext = $foto_transfer->getClientOriginalExtension();
         $newName = rand(100000,1001238912).".".$ext;

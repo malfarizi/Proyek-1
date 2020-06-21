@@ -82,8 +82,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			</div>
 			<div class="head-t">
 				<ul class="card">
-					<li><a href="{{ url('pemesanan/tambah') }}" ><i class="fa fa-heart" aria-hidden="true"></i>Stiker</a></li>
-					<li><a href="{{ url('pemesanan/tambah2') }}" ><i class="fa fa-user" aria-hidden="true"></i>X Banner</a></li>
+					<!-- <li><a href="{{ url('pemesanan/tambah') }}" ><i class="fa fa-heart" aria-hidden="true"></i>Stiker</a></li>
+					<li><a href="{{ url('pemesanan/tambah2') }}" ><i class="fa fa-user" aria-hidden="true"></i>X Banner</a></li> -->
 					
 				</ul>	
 			</div>
@@ -107,10 +107,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 						<ul class="nav navbar-nav ">
 							<li class=" active"><a href="{{ url('halaman_pelanggan/dashboard') }}" class="hyper "><span>Home</span></a></li>	
-							<li><a href="{{ url('halaman_pelanggan/dashboard') }}" class="hyper"> <span>Produk</span></a></li>
-							<li><a href="{{ url('transfer/tambah') }}" class="hyper"> <span> Transfer Pembayaran</span></a></li>
-							<li><a href="{{ url('transfer/transfer') }}" class="hyper"> <span> Pembayaran</span></a></li>
-							<li><a href="{{ url('pemesanan/pemesanan') }}" class="hyper"> <span>Detail Pesanan</span></a></li>
+							<!--<li><a href="{{ url('halaman_pelanggan/dashboard') }}" class="hyper"> <span>Produk</span></a></li>-->
+							<li><a href="{{ url('pemesanan/tambah') }}" class="hyper"> <span>Pesan</span></a></li>
+							
+							<li><a href="{{ url('detail_pemesanan/detail_pemesanan') }}" class="hyper"> <span>Detail Pesanan</span></a></li>
 					
 							<!--<li><a href="codes.html" class="hyper"> <span>Konfirmasi Pembayaran</span></a></li>	-->
 						</ul>

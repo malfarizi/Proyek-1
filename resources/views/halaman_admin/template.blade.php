@@ -102,14 +102,15 @@ Divider -->
       <hr class="sidebar-divider my-0">
      <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
           <span>Pemesanan</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+        <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Pemesanan:</h6>
-            <a class="collapse-item" href="{{url('halaman_admin/pemesanan/pemesanan')}}">Detail Pemesanan</a>
+            <a class="collapse-item" href="{{url('halaman_admin/detail_pemesanan')}}">Detail Pemesanan</a>
+            <a class="collapse-item" href="{{url('halaman_admin/pemesanan/pemesanan')}}">Pemesanan</a>
             <a class="collapse-item" href="{{url('halaman_admin/transfer/transfer')}}">Transfer</a>
 
           </div>
@@ -164,7 +165,7 @@ Divider -->
             <!-- Nav Item - Messages -->
            
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <div class="topbar-divider d-flex d-sm-block"></div>
 
            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">

@@ -34,12 +34,12 @@
                     </div>
                 </div>
                  <div class="form-group row">
-                    <label for="id_pemesanan" class="col-sm-2 col-form-label">ID Pemesanan</label>
+                    <label for="id_detail_pemesanan" class="col-sm-2 col-form-label">ID Pemesanan</label>
                     <div class="col-sm-5">
-                      <select name="id_pemesanan" id="id_pemesanan" class="form-control">
+                      <select name="id_detail_pemesanan" id="id_detail_pemesanan" class="form-control">
                 <option value="">== Pilih Pesanan ==</option>
                 @foreach ($pms as $p)
-                    <option value="{{ $p->id_pemesanan }}">{{ $p->id_pemesanan }}</option>
+                    <option value="{{ $p->id_detail_pemesanan }}">ID Detail Pemesanan = {{ $p->id_detail_pemesanan }}</option>
                 @endforeach
                  </select>
                  </div>

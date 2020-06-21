@@ -20,14 +20,13 @@ class PemesananController extends Controller
             ->where('pelanggan.id_pelanggan', session('id_pelanggan'))
             ->get();
 
-     $amount = pemesanan::select(DB::raw('sum(jml_pesan * harga_pcs) as total'))->where('id_pelanggan', session('id_pelanggan'))->get();
-             return view('/pemesanan/pemesanan',compact('datas','amount'));
+             return view('/pemesanan/pemesanan',compact('datas'));
     }
 
     public function create()
     {
         $datas = Pelanggan::select('id_pelanggan','nama_pelanggan')->where('id_pelanggan', session('id_pelanggan'))->get();
-        $prodak = Produk::select('id_produk','nama_produk','harga','ukuran')->where('id_produk', 1)->get();
+        $prodak = Produk::get();
         return view('/pemesanan/tambah',compact('datas', 'prodak'));
 
        
@@ -36,27 +35,26 @@ class PemesananController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'desain' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
+            'foto_ktp' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
             
         ]);
 
         $data = new \App\Pemesanan();
      
-        $data->jml_pesan = $request->input('jml_pesan');
+
         $data->id_produk = $request->input('id_produk');
         $data->id_pelanggan = $request->input('id_pelanggan');
-        $data->status = $request->input('status');
-        $data->harga_pcs = $request->input('harga_pcs');
+
             
             
        
-        $desain = $request->file('desain');
-        $ext = $desain->getClientOriginalExtension();
+        $foto_ktp = $request->file('foto_ktp');
+        $ext = $foto_ktp->getClientOriginalExtension();
         $newName = rand(100000,1001238912).".".$ext;
-        $desain->move('uploads/file/desain',$newName);
-        $data->desain = $newName;
+        $foto_ktp->move('uploads/file/foto_ktp',$newName);
+        $data->foto_ktp = $newName;
         $data->save();
-    return redirect('/pemesanan/pemesanan')->with('status','Data Berhasil Ditambahkan');
+    return redirect('/detail_pemesanan/tambah')->with('status','Data Berhasil Ditambahkan');
     }
 
      public function edit($id_pemesanan)
@@ -69,84 +67,19 @@ class PemesananController extends Controller
     {
         $data = \App\Pemesanan::findOrFail($id_pemesanan);
         
-        if (empty($request->file('foto_bukti')))
+        if (empty($request->file('foto_ktp')))
         {
-            $data->foto_bukti = $data->foto_bukti;
+            $data->foto_ktp = $data->foto_ktp;
         }
         else{
-            unlink('uploads/file/bukti'.$data->foto_bukti); //menghapus file lama
-            $foto_bukti = $request->file('foto_bukti');
-            $ext = $foto_bukti->getClientOriginalExtension();
+            unlink('uploads/file/bukti'.$data->foto_ktp); //menghapus file lama
+            $foto_ktp = $request->file('foto_ktp');
+            $ext = $foto_ktp->getClientOriginalExtension();
             $newName = rand(100000,1001238912).".".$ext;
-            $foto_bukti->move('uploads/file/bukti',$newName);
-            $data->foto_bukti = $newName;
+            $foto_ktp->move('uploads/file/bukti',$newName);
+            $data->foto_ktp = $newName;
         }
         $data->save();
         return redirect('pemesanan/pemesanan')->with('status','Data Berhasil Dirubah');
     }
-
-
-
-  public function create2()
-    {
-        $datas = Pelanggan::select('id_pelanggan','nama_pelanggan')->where('id_pelanggan', session('id_pelanggan'))->get();
-        $prodak = Produk::select('id_produk','nama_produk','harga','ukuran')->where('id_produk', 2)->get();
-        return view('/pemesanan/tambah',compact('datas', 'prodak'));
-
-       
-    }
-
-    public function store2(Request $request)
-    {
-        $this->validate($request, [
-            'desain' => 'required|file|image|mimes:jpeg,png,jpg|max:2048',
-            
-        ]);
-
-        $data = new \App\Pemesanan();
-     
-        $data->jml_pesan = $request->input('jml_pesan');
-        $data->id_produk = $request->input('id_produk');
-        $data->id_pelanggan = $request->input('id_pelanggan');
-        $data->status = $request->input('status');
-        $data->harga_pcs = $request->input('harga_pcs');
-            
-            
-       
-        $desain = $request->file('desain');
-        $ext = $desain->getClientOriginalExtension();
-        $newName = rand(100000,1001238912).".".$ext;
-        $desain->move('uploads/file/desain',$newName);
-        $data->desain = $newName;
-        $data->save();
-    return redirect('/pemesanan/pemesanan')->with('status','Data Berhasil Ditambahkan');
-    }
-
-     public function edit2($id_pemesanan)
-    {
-        $data = Pemesanan::findOrFail($id_pemesanan);
-        return view('pemesanan/edit',compact('data'));
-    }
-
-    public function update2(Request $request, $id_pemesanan)
-    {
-        $data = \App\Pemesanan::findOrFail($id_pemesanan);
-        
-        if (empty($request->file('foto_bukti')))
-        {
-            $data->foto_bukti = $data->foto_bukti;
-        }
-        else{
-            unlink('uploads/file/bukti'.$data->foto_bukti); //menghapus file lama
-            $foto_bukti = $request->file('foto_bukti');
-            $ext = $foto_bukti->getClientOriginalExtension();
-            $newName = rand(100000,1001238912).".".$ext;
-            $foto_bukti->move('uploads/file/bukti',$newName);
-            $data->foto_bukti = $newName;
-        }
-        $data->save();
-        return redirect('pemesanan/pemesanan')->with('status','Data Berhasil Dirubah');
-    }
-
-
 }

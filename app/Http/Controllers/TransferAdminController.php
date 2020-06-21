@@ -19,9 +19,9 @@ class TransferAdminController extends Controller
      public function index()
     {
         $datas = DB::table('transfer')
-            ->join('pemesanan', 'pemesanan.id_pemesanan', '=', 'transfer.id_pemesanan')
+            ->join('detail_pemesanan', 'detail_pemesanan.id_detail_pemesanan', '=', 'transfer.id_detail_pemesanan')
             ->join('pelanggan', 'pelanggan.id_pelanggan', '=', 'transfer.id_pelanggan')
-            ->select('pemesanan.*', 'pelanggan.*', 'transfer.*')
+            ->select('detail_pemesanan.*', 'pelanggan.*', 'transfer.*')
             ->get();
 
              return view('halaman_admin/transfer/transfer',compact('datas'));

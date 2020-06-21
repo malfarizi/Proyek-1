@@ -36,62 +36,48 @@
                   
                     </div>
                 </div>
-                 <div class="form-group row">
+
+                    <div class="form-group row">
                     <label for="id_pelanggan" class="col-sm-2 col-form-label">ID Pelanggan</label>
                     <div class="col-sm-5">
+                       @foreach($datas as $c2)
+                    <label for="id_pelanggan" class="col-sm-2 col-form-label">{{$c2->id_pelanggan}}</label>
+                   @endforeach
+                    </div>
+                </div>
+
+
+                 <div class="form-group row">
+                    
+                    <div class="col-sm-5">
                         @foreach($datas as $c2)
-                    <input type="text" name="id_pelanggan" class="form-control" value="{{$c2->id_pelanggan}}" id="id_pelanggan" required="" readonly>
+                    <input type="hidden" name="id_pelanggan" class="form-control" value="{{$c2->id_pelanggan}}" id="id_pelanggan" required="" readonly>
                     @endforeach
                     </div>
                 </div>
+                 
+
+
+
                  <div class="form-group row">
-                    <label for="nama_produk" class="col-sm-2 col-form-label"> Nama Produk</label>
-                    <div class="col-sm-5">
-                        @foreach($prodak as $c1)
-                   <label for="nama_produk" class="col-sm-2 col-form-label"> {{$c1->nama_produk}}</label>
-                    @endforeach
-                    </div>
+                <label for="id_produk" class="col-sm-2 col-form-label">Pilih Produk</label>
+                <div class="col-sm-5">
+                <select name="id_produk" id="id_produk" class="form-control">
+                <option value=""> ==Pilih Produk==</option>
+                @foreach ($prodak as $p)
+            
+                 <option value="{{ $p->id_produk }}"> {{$p->nama_produk}} - Rp.{{$p->harga}}.- </option>
+              
+                @endforeach
+                 </select>
+                 </div>
                 </div>
-                <div class="form-group row">
-                    <label for="ukuran" class="col-sm-2 col-form-label"> Ukuran Produk</label>
-                    <div class="col-sm-5">
-                        @foreach($prodak as $c1)
-                   <label for="ukuran" class="col-sm-2 col-form-label"> {{$c1->ukuran}}</label>
-                    @endforeach
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="id_produk" class="col-sm-2 col-form-label">ID Produk</label>
-                    <div class="col-sm-5">
-                        @foreach($prodak as $c1)
-                    <input type="text" name="id_produk" class="form-control" value="{{$c1->id_produk}}" id="id_produk" required="" readonly>
-                    @endforeach
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="harga_pcs" class="col-sm-2 col-form-label">Harga per Pcs</label>
-                    <div class="col-sm-5">
-                        @foreach($prodak as $c1)
-                    <input type="text" name="harga_pcs" class="form-control" value="{{$c1->harga}}" id="harga_pcs" required="" readonly>
-                    @endforeach
-                    </div>
-                </div>
-                 <div class="form-group row">
-                    <label for="jml_pesan" class="col-sm-2 col-form-label">Jumlah Pesan</label>
-                    <div class="col-sm-5">
-                    <input type="text" name="jml_pesan" class="form-control" id="jml_pesan" required="">
-                    </div>
-                </div>
-                 <div class="form-group row">
-   
-                    <div class="col-sm-5">
-                    <input type="hidden" name="status" class="form-control" id="status" required="" value="Proses Pesan" readonly>
-                    </div>
-                </div>
+
+                   
                <div class="form-group row">
-                    <label for="desain" class="col-sm-2 col-form-label">Upload Desain</label>
+                    <label for="foto_ktp" class="col-sm-2 col-form-label">Upload Foto KTP</label>
                     <div class="col-sm-5">
-                    <input type="file" name="desain" class="form-control" id="desain" required="">
+                    <input type="file" name="foto_ktp" class="form-control" id="foto_ktp" required="">
                     </div>
                 </div>
 

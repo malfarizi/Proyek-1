@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class pemesanan extends Model
 {
-       protected $table      = 'pemesanan';
+    protected $table      = 'pemesanan'; 
     protected $primaryKey = 'id_pemesanan';
     protected $fillable   = [
-         'jml_pesan', 'total', 'id_produk', 'id_pelanggan', 'status' ,'harga_pcs','desain'
+         'id_produk', 'id_pelanggan', 'foto_ktp' 
     ];
 
 

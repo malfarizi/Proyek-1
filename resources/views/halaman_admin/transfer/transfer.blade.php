@@ -28,6 +28,9 @@
                       <th>Nama Pelanggan</th>
                       <th>ID Detail Pemesanan</th>
                       <th>ID Produk</th>
+                      <th>Total</th>
+                      <th>DP</th>
+                      <th>Metode Pembayaran</th>
                       <th>Bukti Transfer</th>
                       <th>Tanggal Transfer</th>
                       <th>Status</th>
@@ -43,6 +46,9 @@
                                     <td>{{ $data->nama_pelanggan }}</td>
                                     <td>{{ $data->id_detail_pemesanan }}</td>
                                     <td>{{ $data->id_produk }}</td> 
+                                    <td>@currency($data->total)</td>
+                                    <td>@currency($data->dp)</td>
+                                    <td>{{ $data->metode_pembayaran }}</td>
                                      <td><img src="{{ url('uploads/file/foto_transfer/'.$data->foto_transfer) }}" style="width: 400px; height: 150px;"> </td>
                                       <td>{{ $data->created_at }}</td>
                                       <td>{{ $data->status }}</td>

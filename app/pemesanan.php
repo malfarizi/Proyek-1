@@ -20,4 +20,7 @@ class pemesanan extends Model
      public function pelanggan(){
         return $this->belongsTo('App\Pelanggan', 'id_pelanggan');
     }
+
+
+    
 }

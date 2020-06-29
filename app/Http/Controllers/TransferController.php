@@ -56,7 +56,7 @@ class TransferController extends Controller
           $data = new \App\Transfer();
         $data->id_pelanggan = $request->input('id_pelanggan');
         $data->id_detail_pemesanan = $request->input('id_detail_pemesanan');
-                
+        $data->metode_pembayaran = $request->input('metode_pembayaran');        
         $foto_transfer = $request->file('foto_transfer');
         $ext = $foto_transfer->getClientOriginalExtension();
         $newName = rand(100000,1001238912).".".$ext;

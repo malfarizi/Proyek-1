@@ -9,7 +9,7 @@ class Transfer extends Model
     protected $table      = 'transfer';
     protected $primaryKey = 'id_transfer';
     protected $fillable   = [
-         'foto_transfer', 'id_pelanggan','id_detail_pemesanan'
+         'foto_transfer', 'id_pelanggan','id_detail_pemesanan', 'metode_pembayaran'
     ];
 
 

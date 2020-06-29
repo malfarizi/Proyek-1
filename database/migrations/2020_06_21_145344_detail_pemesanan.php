@@ -21,6 +21,7 @@ class DetailPemesanan extends Migration
             $table->integer('harga');
             $table->integer('jml_pesan');
             $table->integer('total');
+            $table->integer('dp');
             $table->integer('id_pemesanan')->unsigned();
             $table->foreign('id_pemesanan')->references('id_pemesanan')->on('pemesanan');
             $table->integer('id_produk')->unsigned();

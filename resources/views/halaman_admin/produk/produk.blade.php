@@ -40,7 +40,7 @@
                                     <td>{{ $data->ukuran }}</td>
                                     <td>{{ $data->deskripsi_produk }}</td>
                                     
-                                    <td>{{ $data->harga }}</td>
+                                    <td>@currency($data->harga)</td>
                                     <td><img src="{{ url('uploads/file/'.$data->foto_produk) }}" style="width: 400px; height: 150px;"> </td>
 
 

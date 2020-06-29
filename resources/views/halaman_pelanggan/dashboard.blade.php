@@ -33,10 +33,10 @@
 									
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html"><strong>{{ $data->nama_produk }}</strong></a></h6>
-											<h6><a href="single.html">{{ $data->deskripsi_produk }}</a></h6>						
-											<h6><a href="single.html">{{ $data->ukuran }}</a></h6>	
-											<h6><a href="single.html">{{ $data->harga }}</a></h6>		
+											<h6><a href=""><strong>{{ $data->nama_produk }}</strong></a></h6>
+											<h6><a href="">{{ $data->deskripsi_produk }}</a></h6>						
+											<h6><a href="">{{ $data->ukuran }}</a></h6>	
+											<h6><a href="">@currency($data->harga)</a></h6>		
 										</div>
 										
 										

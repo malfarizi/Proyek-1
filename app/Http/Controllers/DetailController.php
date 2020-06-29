@@ -98,6 +98,9 @@ class DetailController extends Controller
         $total = $data->harga * $data->jml_pesan;
         $data->total = $total;
 
+        $dp = $data->total * 0.5;
+        $data->dp = $dp;
+
         $data->save();
     return redirect('/detail_pemesanan/detail_pemesanan')->with('status','Data Berhasil Ditambahkan');
     }

@@ -21,9 +21,12 @@
 
                       <th>Nama Pelanggan</th>
 <!--                       <th>Jumlah Produk Yang Dipesan</th> -->
-                      <th>Produk</th>
+                      <th>ID Produk</th>
 <!--                       <th>Harga per Pcs</th> -->
                       <th>Status</th>
+                      <th>Total</th>
+                      <th>DP</th>
+                      <th>Metode Pembayaran</th>
                       <!-- <th>Desain</th> -->
                       <th>Bukti Transfer</th>
                       <th>Tanggal Transfer</th>
@@ -40,8 +43,11 @@
                                     <td>ID {{ $data->id_produk }}</td>
 
                                     <td>{{ $data->status }}</td>
+                                    <td>@currency($data->total)</td>
+                                    <td>@currency($data->dp)</td>
+                                    <td>{{ $data->metode_pembayaran }}</td>
 
-                                     <td><img src="{{ url('uploads/file/foto_transfer/'.$data->foto_transfer) }}" style="width: 100px; height: 150px;"> </td>
+                                     <td><img src="{{ url('uploads/file/foto_transfer/'.$data->foto_transfer) }}" style="width: 200px; height: 150px;"> </td>
                                       <td>{{ $data->created_at }}</td>
 
                                     

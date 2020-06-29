@@ -27,7 +27,7 @@
                     @endif
          <div class="card" align="center">
             <div class="card-header">
-                <h3>Penyewaan</h3>
+                <h3>Detail Pemesanan</h3>
             </div>
             <div class="card-body">
             <form method="POST" action="{{url('/detail_pemesanan/tambah/proses') }}" enctype="multipart/form-data">
@@ -51,12 +51,16 @@
                 </div>
 
 
+
+
+
                 <div class="form-group row">
-                <label for="id_pemesanan" class="col-sm-2 col-form-label">ID Pemesanan</label>
+                <label for="id_pemesanan" class="col-sm-2 col-form-label">Pemesanan</label>
                 <div class="col-sm-2">
                 <select name="id_pemesanan" id="id_pemesanan" class="form-control">
                 <option value="">Pilih </option>
                 @foreach ($datas as $p1)
+   
                     <option value="{{ $p1->id_pemesanan }}">{{ $loop->iteration}}. ID  {{ $p1->id_pemesanan }} - {{$p1->nama_produk}}</option>
                 @endforeach
                  </select>

@@ -29,11 +29,12 @@
                       <th>Jumlah Pesan</th>
                       <th>Harga Produk</th>
                       <th>Total</th>
+                      <th>DP</th>
                       <th>Status</th>
                       <th>Desain</th>
                       <th>Tanggal Pesan</th>
                       
-                     
+                
                     </tr>
                   </thead>
                   <tbody>
@@ -44,8 +45,9 @@
                                     <td>{{ $data->nama_pelanggan }}</td>
                                     <td>{{ $data->nama_produk }}</td>
                                     <td>{{ $data->jml_pesan }} pcs</td>
-                                    <td>Rp.{{ $data->harga }}</td>
-                                    <td>Rp.{{ $data->total }}</td>
+                                    <td>@currency($data->harga)</td>
+                                    <td>@currency($data->total)</td>
+                                    <td>@currency($data->dp)</td>
                                     <td>{{ $data->status }}</td>
                                     <td><img src="{{ url('uploads/file/desain/'.$data->desain) }}" style="width: 400px; height: 150px;"> </td>
                                     <td>{{ $data->created_at }}</td>

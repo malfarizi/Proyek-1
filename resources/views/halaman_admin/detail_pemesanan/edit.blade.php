@@ -38,7 +38,7 @@
                     <div class="col-sm-5">
                     <select name="status" id="status" class="form-control">
                     <option value="{{$data->status}}">--{{$data->status}}--</option>
-
+                    <option value="Pembayaran Ditolak">Pembayaran Ditolak</option>
                     <option value="Pembayaran Terverifikasi">Pembayaran Terverifikasi</option>
                     <option value="Pesanan Dalam Proses">Pesanan Dalam Proses</option>
                      <option value="Pesanan Selesai">Pesanan Selesai</option>  

@@ -12,6 +12,7 @@
             <div class="card-header" >
                 <h3><strong>Upload Bukti Transfer</strong></h3>
                 <p>Transfer Ke No Rek : 0987876</p>
+                <p>An Lorem Ipsum</p>
             </div>
             <div class="card-body">
             <form method="POST" action="{{url('/transfer/tambah/proses') }}" enctype="multipart/form-data">
@@ -40,6 +41,20 @@
                 <option value="">== Pilih Pesanan ==</option>
                 @foreach ($pms as $p)
                     <option value="{{ $p->id_detail_pemesanan }}">ID Detail Pemesanan = {{ $p->id_detail_pemesanan }}</option>
+                @endforeach
+                 </select>
+                 </div>
+                </div>
+
+
+                <div class="form-group row">
+                    <label for="metode_pembayaran" class="col-sm-2 col-form-label">Metode Pembayaran</label>
+                    <div class="col-sm-5">
+                      <select name="metode_pembayaran" id="metode_pembayaran" class="form-control">
+                <option value="">== Pilih Metode Pembayaran ==</option>
+                @foreach ($pms as $p)
+                    <option value="DP">DP</option>
+                    <option value="Total">Total</option>
                 @endforeach
                  </select>
                  </div>

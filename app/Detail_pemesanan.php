@@ -9,7 +9,7 @@ class Detail_pemesanan extends Model
     protected $table      = 'detail_pemesanan'; 
     protected $primaryKey = 'id_detail_pemesanan';
     protected $fillable   = [
-         'id_produk', 'id_pelanggan', 'id_pemesanan', 'status', 'total', 'harga', 'jml_pesan' 
+         'id_produk', 'id_pelanggan', 'id_pemesanan', 'status', 'total', 'harga', 'jml_pesan', 'dp' 
     ];
 
 

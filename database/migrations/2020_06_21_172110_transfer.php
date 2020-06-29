@@ -21,6 +21,7 @@ class Transfer extends Migration
             $table->integer('id_detail_pemesanan')->unsigned();
             $table->foreign('id_detail_pemesanan')->references('id_detail_pemesanan')->on('detail_pemesanan');
             $table->string('foto_transfer')->nullable();
+            $table->string('metode_pembayaran')->nullable();
             $table->timestamps();
         });   
     }

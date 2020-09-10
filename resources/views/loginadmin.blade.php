@@ -61,15 +61,7 @@
 <div class="login-button text-center">
                                     <input type="submit" class="btn btn-primary" value="login">
 
-					<div class="text-center">
-						<span class="txt1">
-							Buat Akun
-						</span>
-
-						<a href="/registeradmin" class="txt2 hov1">
-							Klik Disini
-						</a>
-					</div>
+					
 				</form>
 			</div>
 		</div>

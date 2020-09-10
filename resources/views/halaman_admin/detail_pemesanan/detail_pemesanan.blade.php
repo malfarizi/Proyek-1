@@ -49,7 +49,7 @@
                                     <td>@currency($data->total)</td>
                                     <td>@currency($data->dp)</td>
                                     <td>{{ $data->status }}</td>
-                                    <td><img src="{{ url('uploads/file/desain/'.$data->desain) }}" style="width: 400px; height: 150px;"> </td>
+                                    <td>{{ $data->desain }}</td>
                                     <td>{{ $data->created_at }}</td>
 
 

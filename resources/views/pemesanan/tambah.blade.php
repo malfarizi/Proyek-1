@@ -37,14 +37,7 @@
                     </div>
                 </div>
 
-                    <div class="form-group row">
-                    <label for="id_pelanggan" class="col-sm-2 col-form-label">ID Pelanggan</label>
-                    <div class="col-sm-5">
-                       @foreach($datas as $c2)
-                    <label for="id_pelanggan" class="col-sm-2 col-form-label">{{$c2->id_pelanggan}}</label>
-                   @endforeach
-                    </div>
-                </div>
+
 
 
                  <div class="form-group row">

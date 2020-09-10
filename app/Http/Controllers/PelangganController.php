@@ -68,7 +68,7 @@ public function pelanggan(Request $request){
     );
     $data = new \App\Pelanggan();
     $data->username = $request->input('username');
-    $data->password = $request->input('password');
+    $data->password = bcrypt($request->password);
     $data->nama_pelanggan = $request->input('nama_pelanggan');
     $data->alamat = $request->input('alamat');
     $data->no_hp = $request->input('no_hp');

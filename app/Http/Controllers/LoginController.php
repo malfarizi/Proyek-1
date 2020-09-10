@@ -45,7 +45,7 @@ class LoginController extends Controller
                 
 
                 Session::put('loginadmin',TRUE);
-                return redirect('/halaman_admin/dashboard');
+                return redirect('/halaman_admin/dashboard')->with('status','Berhasil Login');
             }
             else {
                 return redirect('loginadmin')->with('alert', 'login ');

@@ -147,7 +147,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	<div class="container">
 		<div class="col-md-3 footer-grid">
 			<h3>Alamat</h3>
-			<p>Indramayu
+			<p>Il. Brigjen Darsono By Pass Sebrang Pengadilan Agama
+Harjamukti
+Kota Cirebon
 Jawa Barat 45143
 Indonesia</p>
 		</div>

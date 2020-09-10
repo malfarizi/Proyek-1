@@ -33,6 +33,11 @@
             <div class="card-header">
                 <h3>Tambah Data Admin</h3>
             </div>
+                                @if(session('status'))
+                      <div class="alert alert-success">
+                          {{session('status')}}
+                      </div>
+                    @endif
             <div class="card-body">
             <form method="post" action="{{ url('/registeradminPost') }}" enctype="multipart/form-data">
                {{ csrf_field() }}

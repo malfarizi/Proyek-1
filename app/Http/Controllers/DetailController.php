@@ -66,7 +66,7 @@ class DetailController extends Controller
                    
       
                     'jml_pesan'	=>'required|min:1',
-                    'desain'	=>'required|file|image|mimes:jpeg,png,jpg|max:2048'
+                    'desain'	=>'required|file'
                    
                 ],
                 [
